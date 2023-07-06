@@ -75,3 +75,16 @@ textarea {
     color: #333;
     font-size: 14px;
 }
+.text{
+    position:relative;
+}
+#textarea{
+    resize:none;
+    border-radius:10px;
+}
+.icon{
+    position:absolute;
+    top:50%;
+    right:20px;
+    transform:translateY(-50%);
+}

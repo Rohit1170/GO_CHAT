@@ -2,16 +2,23 @@ const socket=io(    )
 let name;
 let text=document.querySelector('#textarea')
 let messarea=document.querySelector('.mess')
+let but=document.querySelector('.icon')
 do{
     name=prompt('please enter your name:')
 
 }while(!name)
+but.addEventListener('click',(e)=>{
+    sendMessage(text.value)
+});
 text.addEventListener('keyup',(e)=>{
     if(e.key==='Enter'){
         sendMessage(e.target.value)
     }
 })
 function sendMessage(message){
+    if(!message||!message.trim()){
+        return
+    }
     let msg={
         user:name,
         message:message.trim()
